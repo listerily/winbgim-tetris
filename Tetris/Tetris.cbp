@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Tetris" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\Tetris" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\Tetris" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-Wno-write-strings" />
+			<Add option="-x c++" />
+			<Add option="-std=c++98" />
+			<Add option="-pedantic" />
+			<Add directory="$(CODEBLOCKS)\sdk\winbgim\include" />
+		</Compiler>
+		<Linker>
+			<Add library="bgi" />
+			<Add library="gdi32" />
+			<Add library="comdlg32" />
+			<Add library="uuid" />
+			<Add library="oleaut32" />
+			<Add library="ole32" />
+			<Add directory="$(CODEBLOCKS)\sdk\winbgim\lib" />
+		</Linker>
+		<Unit filename="Client.cpp" />
+		<Unit filename="Client.hpp" />
+		<Unit filename="Color.hpp" />
+		<Unit filename="GUIButton.cpp" />
+		<Unit filename="GUIButton.hpp" />
+		<Unit filename="GUIElement.cpp" />
+		<Unit filename="GUIElement.hpp" />
+		<Unit filename="GUILabel.cpp" />
+		<Unit filename="GUILabel.hpp" />
+		<Unit filename="GUIRectangle.cpp" />
+		<Unit filename="GUIRectangle.hpp" />
+		<Unit filename="GUISheet.cpp" />
+		<Unit filename="GUISheet.hpp" />
+		<Unit filename="GameScreen.cpp" />
+		<Unit filename="GameScreen.hpp" />
+		<Unit filename="Level.cpp" />
+		<Unit filename="Level.hpp" />
+		<Unit filename="Logger.cpp" />
+		<Unit filename="Logger.hpp" />
+		<Unit filename="Matrix.cpp" />
+		<Unit filename="Matrix.hpp" />
+		<Unit filename="Renderer.cpp" />
+		<Unit filename="Renderer.hpp" />
+		<Unit filename="Tile.cpp" />
+		<Unit filename="Tile.hpp" />
+		<Unit filename="Vec2.cpp" />
+		<Unit filename="Vec2.hpp" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
