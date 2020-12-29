@@ -6,6 +6,7 @@ class Renderer;
 class Level;
 class GameScreen;
 class Tile;
+class KeyEventListener;
 class Client
 {
 private:
@@ -21,9 +22,11 @@ private:
 	Renderer* renderer;
     Level* level;
     GameScreen* screen;
+    KeyEventListener* listener;
 private:
-    void guiTick();
-    void gameTick();
+    void flushGraphics();
+    void normalEvent();
+    void handleKeyEvent(int key);
 public:
     Client();
     ~Client();

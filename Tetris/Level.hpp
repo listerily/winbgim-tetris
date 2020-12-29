@@ -17,9 +17,9 @@ private:
     bool _started;
     bool _gameOver;
     int _score;
-    int height;
     Tile fallingTile;
     Tile nextTile;
+    Tile fallingTileBack;
     bool hasFallingTile;
     Matrix fallenBlocks;
     Matrix colorBlocks;
@@ -37,13 +37,12 @@ public:
     bool isGameOver()const;
     bool started()const;
     int getScore()const;
-    int getHeight()const;
-    void clearBottomRow();
     bool summonFallingTile();
     void summonNextTile();
     bool fitableIgnoreTiles(Tile const&)const;
     bool fitable(Tile const&)const;
     Tile const& getNextTile()const;
+    int getMirrorTypeOfFalingTile()const;
 public:
     static const int BLOCK_VOID = 0;
     static const int BLOCK_TILE = 1;
@@ -57,6 +56,8 @@ public:
     static const int EVENT_REGEN = 0x6;
     static const int EVENT_CLEAR = 0x7;
     static const int EVENT_RESTART = 0x8;
+    static const int EVENT_MIRROR = 0x9;
+    static const int EVENT_BACK = 0xa;
 public:
     static Matrix TILE_ENTITY[7];
     static void initializeEntities();

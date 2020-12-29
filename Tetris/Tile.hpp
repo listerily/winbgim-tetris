@@ -17,14 +17,18 @@ private:
     Vec2 pos;
     int color;
     int state;
+    int typeId;
 public:
-    Tile(Matrix const& initial,Vec2 const& pos,Color const&color);
+    Tile(Matrix const& initial,Vec2 const& pos,Color const&color,int);
     Tile();
 public:
     Color const& getColor()const;
     void setColor(Color const& color);
     void turn(int times);
     Matrix const& getBody()const;
+    void setBody(Matrix const&);
     Vec2 const& getPos()const;
     Vec2& getPos();
+    int getTypeId()const;
+    void setTypeId(int type);
 };

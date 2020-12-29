@@ -15,7 +15,7 @@ Level::Level(int rows,int cols)
     this->cols = cols;
     _started = false;
     _gameOver = false;
-    height = 0;
+    _score = 0;
     hasFallingTile = false;
     fallenBlocks = Matrix(rows,cols);
     colorBlocks = Matrix(rows,cols);
@@ -51,7 +51,12 @@ void Level::tick(int event)
         fallenBlocks = Matrix(rows,cols);
     }
 
-    if(!hasFallingTile || event == EVENT_REGEN || event == EVENT_CLEAR)
+    if(event == EVENT_BACK)
+    {
+        fallingTile = fallingTileBack;
+    }
+
+    if(!hasFallingTile || event == EVENT_REGEN)
     {
         if(!summonFallingTile())
         {
@@ -62,13 +67,23 @@ void Level::tick(int event)
         return;
     }
 
-    if(event == EVENT_TURN_LEFT || event == EVENT_TURN_RIGHT)
+    if(event == EVENT_TURN_LEFT || event == EVENT_TURN_RIGHT || EVENT_MIRROR)
     {
         Tile turnedTile = fallingTile;
+
         if(event == EVENT_TURN_LEFT)
             turnedTile.turn(3);
-        else
+        else if(event == EVENT_TURN_RIGHT)
             turnedTile.turn(1);
+        else if(event == EVENT_MIRROR)
+        {
+            int typeAfterMirror = getMirrorTypeOfFalingTile();
+            if(typeAfterMirror != -1)
+            {
+                turnedTile.setBody(TILE_ENTITY[typeAfterMirror]);
+                turnedTile.setTypeId(typeAfterMirror);
+            }
+        }
 
         int max_times;
         bool shouldAdjust;
@@ -191,6 +206,26 @@ void Level::tick(int event)
     }
 
 }
+int Level::getMirrorTypeOfFalingTile()const
+{
+    int typeIdAfterMirror = -1;
+    switch(fallingTile.getTypeId())
+    {
+    case 0:
+        typeIdAfterMirror = 6;
+        break;
+    case 6:
+        typeIdAfterMirror = 0;
+        break;
+    case 3:
+        typeIdAfterMirror = 4;
+        break;
+    case 4:
+        typeIdAfterMirror = 3;
+        break;
+    }
+    return typeIdAfterMirror;
+}
 Tile const& Level::getNextTile()const
 {
     return nextTile;
@@ -200,7 +235,7 @@ void Level::summonNextTile()
     int type = rand() % 7;
     Vec2 initial_pos = Vec2(0,0);
     Color color = (rand() % 14) + 1;
-    nextTile = Tile(TILE_ENTITY[type],initial_pos,color);
+    nextTile = Tile(TILE_ENTITY[type],initial_pos,color,type);
     nextTile.turn(rand() % 4);
 }
 bool Level::summonFallingTile()
@@ -233,6 +268,7 @@ bool Level::summonFallingTile()
     newTile.getPos().x = borderLeft + offset;
 
     fallingTile = newTile;
+    fallingTileBack = newTile;
     return true;
 }
 bool Level::fitableIgnoreTiles(Tile const& tile)const
@@ -281,10 +317,6 @@ int Level::row()const
 {
     return rows;
 }
-void Level::clearBottomRow()
-{
-    ++height;
-}
 int Level::getBlock(Vec2 const& pos)const
 {
     if(!started())
@@ -327,10 +359,6 @@ int Level::getScore()const
     if(!started())
         return 0;
     return _score;
-}
-int Level::getHeight()const
-{
-    return height;
 }
 
 void Level::initializeEntities()
