@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="Client.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="2176" topLine="64" />
+	<File name="Client.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor1 position="2197" topLine="64" />
 	</File>
 	<File name="Client.hpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="460" topLine="16" />
+		<Cursor1 position="460" topLine="6" />
 	</File>
 	<File name="Color.hpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor1 position="36" topLine="0" />
@@ -35,7 +35,7 @@
 		<Cursor1 position="637" topLine="6" />
 	</File>
 	<File name="KeyEventListener.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="1149" topLine="23" />
+		<Cursor1 position="1149" topLine="12" />
 	</File>
 	<File name="KeyEventListener.hpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor1 position="286" topLine="0" />
@@ -43,8 +43,8 @@
 	<File name="Level.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor1 position="315" topLine="0" />
 	</File>
-	<File name="Level.hpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="511" topLine="13" />
+	<File name="Level.hpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor1 position="395" topLine="13" />
 	</File>
 	<File name="Matrix.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor1 position="846" topLine="27" />
@@ -58,8 +58,8 @@
 	<File name="Renderer.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor1 position="52" topLine="0" />
 	</File>
-	<File name="Tile.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="333" topLine="42" />
+	<File name="Tile.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor1 position="41" topLine="0" />
 	</File>
 	<File name="Tile.hpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor1 position="332" topLine="0" />

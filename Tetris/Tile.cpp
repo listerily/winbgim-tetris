@@ -1,7 +1,6 @@
 #include "Tile.hpp"
 
 #include "Level.hpp"
-#include "Logger.hpp"
 
 Tile::Tile(Matrix const&initial,Vec2 const& pos,Color const& color,int type)
 {

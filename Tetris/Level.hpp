@@ -24,8 +24,6 @@ private:
     Matrix fallenBlocks;
     Matrix colorBlocks;
 public:
-    static const int INITIAL_LENGTH = 10;
-public:
     Level(int rows,int cols);
     ~Level();
     void tick(int);

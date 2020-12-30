@@ -65,8 +65,6 @@
 		<Unit filename="KeyEventListener.hpp" />
 		<Unit filename="Level.cpp" />
 		<Unit filename="Level.hpp" />
-		<Unit filename="Logger.cpp" />
-		<Unit filename="Logger.hpp" />
 		<Unit filename="Matrix.cpp" />
 		<Unit filename="Matrix.hpp" />
 		<Unit filename="Renderer.cpp" />
